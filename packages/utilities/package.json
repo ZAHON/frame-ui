@@ -1,0 +1,56 @@
+{
+  "name": "@frame-ui/utilities",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZAHON/frame-ui",
+    "directory": "packages/utilities"
+  },
+  "bugs": {
+    "url": "https://github.com/ZAHON/frame-ui/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "./dist"
+  ],
+  "scripts": {
+    "build": "bun lint && bun clean && tsup",
+    "clean": "rm -rf ./dist",
+    "dev": "bun build:fast --watch",
+    "fmt": "prettier --write . --ignore-path ../../.prettierignore",
+    "fmt:check": "prettier --check . --ignore-path ../../.prettierignore",
+    "lint": "eslint \"src/**/*.ts*\"",
+    "test": "vitest --reporter verbose run",
+    "test:watch": "vitest --reporter verbose"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.3.1"
+  },
+  "devDependencies": {
+    "@frame-ui/eslint-config": "workspace:*",
+    "@frame-ui/prettier-config": "workspace:*",
+    "eslint": "^9.36.0",
+    "prettier": "^3.6.2",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}

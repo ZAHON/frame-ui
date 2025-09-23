@@ -1,0 +1,40 @@
+{
+  "name": "@frame-ui/styles",
+  "version": "0.0.0",
+  "description": "",
+  "keywords": [],
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZAHON/frame-ui",
+    "directory": "packages/styles"
+  },
+  "bugs": {
+    "url": "https://github.com/ZAHON/frame-ui/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/index.min.css",
+  "style": "./dist/index.min.css",
+  "exports": {
+    ".": "./dist/index.min.css"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "./dist"
+  ],
+  "scripts": {
+    "build": "bun run clean && bunx @tailwindcss/cli -i ./src/index.css -o ./dist/index.min.css --minify",
+    "clean": "rm -rf ./dist",
+    "fmt": "prettier --write . --ignore-path ../../.prettierignore",
+    "fmt:check": "prettier --check . --ignore-path ../../.prettierignore"
+  },
+  "devDependencies": {
+    "@frame-ui/prettier-config": "workspace:*",
+    "prettier": "^3.6.2"
+  }
+}

@@ -1,0 +1,5 @@
+@import 'tailwindcss';
+@import '@frame-ui/styles';
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+@custom-variant high-contrast (&[data-high-contrast="true"], [data-high-contrast="true"] &:not([data-high-contrast="false"], [data-high-contrast="false"] *));

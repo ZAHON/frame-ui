@@ -1,0 +1,792 @@
+@layer base {
+  :root {
+    --frame-ui-font-size-1: calc(0.75rem * var(--frame-ui-scaling));
+    --frame-ui-font-size-2: calc(0.875rem * var(--frame-ui-scaling));
+    --frame-ui-font-size-3: calc(1rem * var(--frame-ui-scaling));
+    --frame-ui-font-size-4: calc(1.125rem * var(--frame-ui-scaling));
+    --frame-ui-font-size-5: calc(1.25rem * var(--frame-ui-scaling));
+    --frame-ui-font-size-6: calc(1.5rem * var(--frame-ui-scaling));
+    --frame-ui-font-size-7: calc(1.75rem * var(--frame-ui-scaling));
+    --frame-ui-font-size-8: calc(2.1875rem * var(--frame-ui-scaling));
+    --frame-ui-font-size-9: calc(3.75rem * var(--frame-ui-scaling));
+
+    --frame-ui-line-height-1: calc(1rem * var(--frame-ui-scaling));
+    --frame-ui-line-height-2: calc(1.25rem * var(--frame-ui-scaling));
+    --frame-ui-line-height-3: calc(1.5rem * var(--frame-ui-scaling));
+    --frame-ui-line-height-4: calc(1.625rem * var(--frame-ui-scaling));
+    --frame-ui-line-height-5: calc(1.75rem * var(--frame-ui-scaling));
+    --frame-ui-line-height-6: calc(1.875rem * var(--frame-ui-scaling));
+    --frame-ui-line-height-7: calc(2.25 * var(--frame-ui-scaling));
+    --frame-ui-line-height-8: calc(2.5rem * var(--frame-ui-scaling));
+    --frame-ui-line-height-9: calc(3.75rem * var(--frame-ui-scaling));
+
+    --frame-ui-letter-spacing-1: 0.0025em;
+    --frame-ui-letter-spacing-2: 0em;
+    --frame-ui-letter-spacing-3: 0em;
+    --frame-ui-letter-spacing-4: -0.0025em;
+    --frame-ui-letter-spacing-5: -0.005em;
+    --frame-ui-letter-spacing-6: -0.00625em;
+    --frame-ui-letter-spacing-7: -0.0075em;
+    --frame-ui-letter-spacing-8: -0.01em;
+    --frame-ui-letter-spacing-9: -0.025em;
+
+    --frame-ui-color-default-contrast: oklch(100% 0 0);
+    --frame-ui-color-primary-contrast: oklch(100% 0 0);
+    --frame-ui-color-success-contrast: oklch(100% 0 0);
+    --frame-ui-color-warning-contrast: oklch(24.314% 0.00754 95.394);
+    --frame-ui-color-danger-contrast: oklch(100% 0 0);
+
+    --frame-ui-color-black-solid: oklch(0% 0 0);
+
+    --frame-ui-color-black-alpha-1: oklch(0% 0 0 / 0.051);
+    --frame-ui-color-black-alpha-2: oklch(0% 0 0 / 0.102);
+    --frame-ui-color-black-alpha-3: oklch(0% 0 0 / 0.149);
+    --frame-ui-color-black-alpha-4: oklch(0% 0 0 / 0.2);
+    --frame-ui-color-black-alpha-5: oklch(0% 0 0 / 0.302);
+    --frame-ui-color-black-alpha-6: oklch(0% 0 0 / 0.4);
+    --frame-ui-color-black-alpha-7: oklch(0% 0 0 / 0.502);
+    --frame-ui-color-black-alpha-8: oklch(0% 0 0 / 0.6);
+    --frame-ui-color-black-alpha-9: oklch(0% 0 0 / 0.702);
+    --frame-ui-color-black-alpha-10: oklch(0% 0 0 / 0.8);
+    --frame-ui-color-black-alpha-11: oklch(0% 0 0 / 0.902);
+    --frame-ui-color-black-alpha-12: oklch(0% 0 0 / 0.949);
+
+    --frame-ui-color-white-solid: oklch(100% 0 0);
+
+    --frame-ui-color-white-alpha-1: oklch(100% 0 0 / 0.051);
+    --frame-ui-color-white-alpha-2: oklch(100% 0 0 / 0.102);
+    --frame-ui-color-white-alpha-3: oklch(100% 0 0 / 0.149);
+    --frame-ui-color-white-alpha-4: oklch(100% 0 0 / 0.2);
+    --frame-ui-color-white-alpha-5: oklch(100% 0 0 / 0.302);
+    --frame-ui-color-white-alpha-6: oklch(100% 0 0 / 0.4);
+    --frame-ui-color-white-alpha-7: oklch(100% 0 0 / 0.502);
+    --frame-ui-color-white-alpha-8: oklch(100% 0 0 / 0.6);
+    --frame-ui-color-white-alpha-9: oklch(100% 0 0 / 0.702);
+    --frame-ui-color-white-alpha-10: oklch(100% 0 0 / 0.8);
+    --frame-ui-color-white-alpha-11: oklch(100% 0 0 / 0.902);
+    --frame-ui-color-white-alpha-12: oklch(100% 0 0 / 0.949);
+
+    --frame-ui-ease-smooth: ease;
+
+    --frame-ui-ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    --frame-ui-ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    --frame-ui-ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    --frame-ui-ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    --frame-ui-ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    --frame-ui-ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+
+    --frame-ui-ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --frame-ui-ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+    --frame-ui-ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+    --frame-ui-ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+    --frame-ui-ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+    --frame-ui-ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    --frame-ui-ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    --frame-ui-ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+    --frame-ui-ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+    --frame-ui-ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+    --frame-ui-ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
+    --frame-ui-ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  }
+
+  [data-theme='light'] {
+    color-scheme: light;
+
+    --frame-ui-color-background: var(--frame-ui-color-white-solid);
+    --frame-ui-color-foreground: var(--frame-ui-color-default-solid-12);
+    --frame-ui-color-overlay: var(--frame-ui-color-black-alpha-6);
+    --frame-ui-color-panel: var(--frame-ui-color-white-solid);
+
+    --frame-ui-color-default-solid-1: oklch(99.107% 0 0);
+    --frame-ui-color-default-solid-2: oklch(98.212% 0 0);
+    --frame-ui-color-default-solid-3: oklch(95.514% 0 0);
+    --frame-ui-color-default-solid-4: oklch(93.1% 0 0);
+    --frame-ui-color-default-solid-5: oklch(90.67% 0 0);
+    --frame-ui-color-default-solid-6: oklch(88.531% 0 0);
+    --frame-ui-color-default-solid-7: oklch(85.142% 0 0);
+    --frame-ui-color-default-solid-8: oklch(79.208% 0 0);
+    --frame-ui-color-default-solid-9: oklch(64.341% 0 0);
+    --frame-ui-color-default-solid-10: oklch(60.999% 0 0);
+    --frame-ui-color-default-solid-11: oklch(50.323% 0 0);
+    --frame-ui-color-default-solid-12: oklch(24.354% 0 0);
+
+    --frame-ui-color-default-alpha-1: oklch(0% 0 0 / 0.012);
+    --frame-ui-color-default-alpha-2: oklch(0% 0 0 / 0.024);
+    --frame-ui-color-default-alpha-3: oklch(0% 0 0 / 0.059);
+    --frame-ui-color-default-alpha-4: oklch(0% 0 0 / 0.09);
+    --frame-ui-color-default-alpha-5: oklch(0% 0 0 / 0.122);
+    --frame-ui-color-default-alpha-6: oklch(0% 0 0 / 0.149);
+    --frame-ui-color-default-alpha-7: oklch(0% 0 0 / 0.192);
+    --frame-ui-color-default-alpha-8: oklch(0% 0 0 / 0.267);
+    --frame-ui-color-default-alpha-9: oklch(0% 0 0 / 0.447);
+    --frame-ui-color-default-alpha-10: oklch(0% 0 0 / 0.486);
+    --frame-ui-color-default-alpha-11: oklch(0% 0 0 / 0.608);
+    --frame-ui-color-default-alpha-12: oklch(0% 0 0 / 0.875);
+
+    --frame-ui-color-primary-solid-1: oklch(99.433% 0.00143 285.189);
+    --frame-ui-color-primary-solid-2: oklch(98.231% 0.00837 271.335);
+    --frame-ui-color-primary-solid-3: oklch(96.086% 0.01707 267.82);
+    --frame-ui-color-primary-solid-4: oklch(93.461% 0.03115 269.83);
+    --frame-ui-color-primary-solid-5: oklch(90.195% 0.04726 269.626);
+    --frame-ui-color-primary-solid-6: oklch(86.196% 0.06763 271.095);
+    --frame-ui-color-primary-solid-7: oklch(80.616% 0.08764 271.421);
+    --frame-ui-color-primary-solid-8: oklch(73.086% 0.11243 270.438);
+    --frame-ui-color-primary-solid-9: oklch(54.376% 0.1911 267.019);
+    --frame-ui-color-primary-solid-10: oklch(51.066% 0.19545 266.592);
+    --frame-ui-color-primary-solid-11: oklch(50.922% 0.17258 267.179);
+    --frame-ui-color-primary-solid-12: oklch(31.264% 0.08587 268.608);
+
+    --frame-ui-color-primary-alpha-1: oklch(27.116% 0.18794 264.073 / 0.008);
+    --frame-ui-color-primary-alpha-2: oklch(50.111% 0.28043 263.839 / 0.031);
+    --frame-ui-color-primary-alpha-3: oklch(49.643% 0.25809 263.306 / 0.071);
+    --frame-ui-color-primary-alpha-4: oklch(50.669% 0.27678 263.688 / 0.118);
+    --frame-ui-color-primary-alpha-5: oklch(50.669% 0.27678 263.688 / 0.176);
+    --frame-ui-color-primary-alpha-6: oklch(49.841% 0.2822 263.903 / 0.243);
+    --frame-ui-color-primary-alpha-7: oklch(46.901% 0.26867 263.962 / 0.329);
+    --frame-ui-color-primary-alpha-8: oklch(44.568% 0.25253 263.907 / 0.447);
+    --frame-ui-color-primary-alpha-9: oklch(43.013% 0.24402 263.914 / 0.757);
+    --frame-ui-color-primary-alpha-10: oklch(41.56% 0.23657 263.931 / 0.8);
+    --frame-ui-color-primary-alpha-11: oklch(39.041% 0.21869 263.845 / 0.773);
+    --frame-ui-color-primary-alpha-12: oklch(20.828% 0.10358 262.879 / 0.878);
+
+    --frame-ui-color-success-solid-1: oklch(99.393% 0.00497 146.596);
+    --frame-ui-color-success-solid-2: oklch(98.192% 0.01004 146.016);
+    --frame-ui-color-success-solid-3: oklch(95.989% 0.02194 145.633);
+    --frame-ui-color-success-solid-4: oklch(93.528% 0.038 146.598);
+    --frame-ui-color-success-solid-5: oklch(90.038% 0.05195 146.086);
+    --frame-ui-color-success-solid-6: oklch(85.626% 0.07091 146.836);
+    --frame-ui-color-success-solid-7: oklch(79.779% 0.09428 147.309);
+    --frame-ui-color-success-solid-8: oklch(71.737% 0.13079 148.17);
+    --frame-ui-color-success-solid-9: oklch(65.124% 0.14677 147.416);
+    --frame-ui-color-success-solid-10: oklch(61.524% 0.14222 147.21);
+    --frame-ui-color-success-solid-11: oklch(52.624% 0.12939 147.22);
+    --frame-ui-color-success-solid-12: oklch(32.659% 0.05301 148.628);
+
+    --frame-ui-color-success-alpha-1: oklch(69.992% 0.23814 142.511 / 0.016);
+    --frame-ui-color-success-alpha-2: oklch(59.175% 0.20134 142.511 / 0.039);
+    --frame-ui-color-success-alpha-3: oklch(58.607% 0.19941 142.511 / 0.086);
+    --frame-ui-color-success-alpha-4: oklch(60.886% 0.20563 142.735 / 0.145);
+    --frame-ui-color-success-alpha-5: oklch(57.482% 0.19435 142.701 / 0.212);
+    --frame-ui-color-success-alpha-6: oklch(56.352% 0.18919 142.916 / 0.302);
+    --frame-ui-color-success-alpha-7: oklch(55.228% 0.18362 143.156 / 0.42);
+    --frame-ui-color-success-alpha-8: oklch(55.843% 0.18189 143.863 / 0.604);
+    --frame-ui-color-success-alpha-9: oklch(53.827% 0.17445 144.024 / 0.725);
+    --frame-ui-color-success-alpha-10: oklch(50.608% 0.16354 144.118 / 0.757);
+    --frame-ui-color-success-alpha-11: oklch(44.017% 0.14052 144.517 / 0.835);
+    --frame-ui-color-success-alpha-12: oklch(21.224% 0.06247 147.378 / 0.875);
+
+    --frame-ui-color-warning-solid-1: oklch(99.295% 0.00515 106.833);
+    --frame-ui-color-warning-solid-2: oklch(98.755% 0.02484 102.003);
+    --frame-ui-color-warning-solid-3: oklch(97.353% 0.08368 104.22);
+    --frame-ui-color-warning-solid-4: oklch(95.34% 0.11683 102.07);
+    --frame-ui-color-warning-solid-5: oklch(92.467% 0.14088 98.084);
+    --frame-ui-color-warning-solid-6: oklch(88.108% 0.1339 95.347);
+    --frame-ui-color-warning-solid-7: oklch(83.508% 0.12033 92.851);
+    --frame-ui-color-warning-solid-8: oklch(76.565% 0.1371 89.749);
+    --frame-ui-color-warning-solid-9: oklch(91.758% 0.1837 100.947);
+    --frame-ui-color-warning-solid-10: oklch(89.669% 0.18499 97.454);
+    --frame-ui-color-warning-solid-11: oklch(56.911% 0.11911 76.808);
+    --frame-ui-color-warning-solid-12: oklch(35.782% 0.04602 86.882);
+
+    --frame-ui-color-warning-alpha-1: oklab(71.439% -0.05269 0.14649 / 0.024);
+    --frame-ui-color-warning-alpha-2: oklch(88.864% 0.18586 101.801 / 0.086);
+    --frame-ui-color-warning-alpha-3: oklch(93.3% 0.19724 104.33 / 0.278);
+    --frame-ui-color-warning-alpha-4: oklch(91.073% 0.18932 100.259 / 0.42);
+    --frame-ui-color-warning-alpha-5: oklch(88.282% 0.18104 94.468 / 0.561);
+    --frame-ui-color-warning-alpha-6: oklch(81.376% 0.16626 90.492 / 0.592);
+    --frame-ui-color-warning-alpha-7: oklch(73.429% 0.15017 86.632 / 0.596);
+    --frame-ui-color-warning-alpha-8: oklch(70.468% 0.14441 84.798 / 0.776);
+    --frame-ui-color-warning-alpha-9: oklch(90.669% 0.18812 99.48 / 0.839);
+    --frame-ui-color-warning-alpha-10: oklch(89.669% 0.18499 97.454);
+    --frame-ui-color-warning-alpha-11: oklch(56.911% 0.11911 76.808);
+    --frame-ui-color-warning-alpha-12: oklch(25.379% 0.05202 84.704 / 0.878);
+
+    --frame-ui-color-danger-solid-1: oklch(99.336% 0.00316 15.246);
+    --frame-ui-color-danger-solid-2: oklch(98.232% 0.00855 16.584);
+    --frame-ui-color-danger-solid-3: oklch(95.547% 0.0207 13.564);
+    --frame-ui-color-danger-solid-4: oklch(92.172% 0.04009 15.86);
+    --frame-ui-color-danger-solid-5: oklch(89.204% 0.05672 16.828);
+    --frame-ui-color-danger-solid-6: oklch(85.69% 0.07405 17.605);
+    --frame-ui-color-danger-solid-7: oklch(80.698% 0.08877 18.264);
+    --frame-ui-color-danger-solid-8: oklch(74.433% 0.11324 18.713);
+    --frame-ui-color-danger-solid-9: oklch(62.554% 0.19334 23.008);
+    --frame-ui-color-danger-solid-10: oklch(59.9% 0.19465 24.019);
+    --frame-ui-color-danger-solid-11: oklch(55.698% 0.19743 25.153);
+    --frame-ui-color-danger-solid-12: oklch(33.898% 0.10891 16.581);
+
+    --frame-ui-color-danger-alpha-1: oklch(62.793% 0.25768 29.223 / 0.012);
+    --frame-ui-color-danger-alpha-2: oklch(62.793% 0.25768 29.223 / 0.031);
+    --frame-ui-color-danger-alpha-3: oklch(60.577% 0.24794 28.411 / 0.078);
+    --frame-ui-color-danger-alpha-4: oklch(62.813% 0.25739 28.782 / 0.141);
+    --frame-ui-color-danger-alpha-5: oklch(62.808% 0.25747 28.892 / 0.196);
+    --frame-ui-color-danger-alpha-6: oklch(61.492% 0.25215 28.988 / 0.259);
+    --frame-ui-color-danger-alpha-7: oklch(56.752% 0.23272 28.998 / 0.337);
+    --frame-ui-color-danger-alpha-8: oklch(54.256% 0.22234 28.795 / 0.443);
+    --frame-ui-color-danger-alpha-9: oklch(55.997% 0.22939 28.679 / 0.718);
+    --frame-ui-color-danger-alpha-10: oklch(54.062% 0.22154 28.791 / 0.757);
+    --frame-ui-color-danger-alpha-11: oklch(51.532% 0.21106 28.625 / 0.827);
+    --frame-ui-color-danger-alpha-12: oklch(28.391% 0.11436 21.872 / 0.91);
+
+    /* prettier-ignore */
+    --frame-ui-shadow-1:
+    	inset 0 0 0 1px var(--frame-ui-color-default-alpha-5),
+    	inset 0 1.5px 2px 0 var(--frame-ui-color-default-alpha-2),
+    	inset 0 1.5px 2px 0 var(--frame-ui-color-black-alpha-2);
+
+    /* prettier-ignore */
+    --frame-ui-shadow-2:
+			0 0 0 1px var(--frame-ui-color-default-alpha-3),
+			0 0 0 0.5px var(--frame-ui-color-black-alpha-1),
+			0 1px 1px 0 var(--frame-ui-color-default-alpha-2),
+			0 2px 1px -1px var(--frame-ui-color-black-alpha-1),
+			0 1px 3px 0 var(--frame-ui-color-black-alpha-1);
+
+    /* prettier-ignore */
+    --frame-ui-shadow-3:
+			0 0 0 1px var(--frame-ui-color-default-alpha-3),
+			0 2px 3px -2px var(--frame-ui-color-default-alpha-3),
+			0 3px 12px -4px var(--frame-ui-color-black-alpha-2),
+			0 4px 16px -8px var(--frame-ui-color-black-alpha-2);
+
+    /* prettier-ignore */
+    --frame-ui-shadow-4:
+			0 0 0 1px var(--frame-ui-color-default-alpha-3),
+			0 8px 40px var(--frame-ui-color-black-alpha-1),
+			0 12px 32px -16px var(--frame-ui-color-default-alpha-3);
+
+    /* prettier-ignore */
+    --frame-ui-shadow-5:
+			0 0 0 1px var(--frame-ui-color-default-alpha-3),
+			0 12px 60px var(--frame-ui-color-black-alpha-3),
+			0 12px 32px -16px var(--frame-ui-color-default-alpha-5);
+
+    /* prettier-ignore */
+    --frame-ui-shadow-6:
+			0 0 0 1px var(--frame-ui-color-default-alpha-3),
+			0 12px 60px var(--frame-ui-color-black-alpha-3),
+			0 16px 64px var(--frame-ui-color-default-alpha-2),
+			0 16px 36px -20px var(--frame-ui-color-default-alpha-7);
+  }
+
+  [data-theme='dark'] {
+    color-scheme: dark;
+
+    --frame-ui-color-background: var(--frame-ui-color-default-solid-1);
+    --frame-ui-color-foreground: var(--frame-ui-color-default-solid-12);
+    --frame-ui-color-overlay: var(--frame-ui-color-black-alpha-8);
+    --frame-ui-color-panel: var(--frame-ui-color-default-solid-2);
+
+    --frame-ui-color-default-solid-1: oklch(17.764% 0 0);
+    --frame-ui-color-default-solid-2: oklch(21.342% 0 0);
+    --frame-ui-color-default-solid-3: oklch(25.197% 0 0);
+    --frame-ui-color-default-solid-4: oklch(28.502% 0 0);
+    --frame-ui-color-default-solid-5: oklch(31.317% 0 0);
+    --frame-ui-color-default-solid-6: oklch(34.846% 0 0);
+    --frame-ui-color-default-solid-7: oklch(40.167% 0 0);
+    --frame-ui-color-default-solid-8: oklch(48.906% 0 0);
+    --frame-ui-color-default-solid-9: oklch(53.824% 0 0);
+    --frame-ui-color-default-solid-10: oklch(58.292% 0 0);
+    --frame-ui-color-default-solid-11: oklch(76.993% 0 0);
+    --frame-ui-color-default-solid-12: oklch(94.912% 0 0);
+
+    --frame-ui-color-default-alpha-1: oklch(0% 0 0 / 0);
+    --frame-ui-color-default-alpha-2: oklch(100% 0 0 / 0.035);
+    --frame-ui-color-default-alpha-3: oklch(100% 0 0 / 0.071);
+    --frame-ui-color-default-alpha-4: oklch(100% 0 0 / 0.106);
+    --frame-ui-color-default-alpha-5: oklch(100% 0 0 / 0.133);
+    --frame-ui-color-default-alpha-6: oklch(100% 0 0 / 0.173);
+    --frame-ui-color-default-alpha-7: oklch(100% 0 0 / 0.231);
+    --frame-ui-color-default-alpha-8: oklch(100% 0 0 / 0.333);
+    --frame-ui-color-default-alpha-9: oklch(100% 0 0 / 0.392);
+    --frame-ui-color-default-alpha-10: oklch(100% 0 0 / 0.447);
+    --frame-ui-color-default-alpha-11: oklch(100% 0 0 / 0.686);
+    --frame-ui-color-default-alpha-12: oklch(100% 0 0 / 0.929);
+
+    --frame-ui-color-primary-solid-1: oklch(19.087% 0.02459 276.53);
+    --frame-ui-color-primary-solid-2: oklch(20.937% 0.03018 274.843);
+    --frame-ui-color-primary-solid-3: oklch(27.157% 0.07055 267.991);
+    --frame-ui-color-primary-solid-4: oklch(31.846% 0.09468 267.26);
+    --frame-ui-color-primary-solid-5: oklch(36.247% 0.10443 267.038);
+    --frame-ui-color-primary-solid-6: oklch(40.33% 0.11129 268.771);
+    --frame-ui-color-primary-solid-7: oklch(44.907% 0.12016 268.95);
+    --frame-ui-color-primary-solid-8: oklch(50.209% 0.13668 268.264);
+    --frame-ui-color-primary-solid-9: oklch(54.376% 0.1911 267.019);
+    --frame-ui-color-primary-solid-10: oklch(58.916% 0.17586 269.308);
+    --frame-ui-color-primary-solid-11: oklch(77.588% 0.1139 273.026);
+    --frame-ui-color-primary-solid-12: oklch(91.079% 0.04286 269.563);
+
+    --frame-ui-color-primary-alpha-1: oklch(48.704% 0.28953 265.16 / 0.059);
+    --frame-ui-color-primary-alpha-2: oklch(53.714% 0.24752 267.626 / 0.09);
+    --frame-ui-color-primary-alpha-3: oklch(56.414% 0.23923 265.266 / 0.235);
+    --frame-ui-color-primary-alpha-4: oklch(57.328% 0.23338 265.625 / 0.341);
+    --frame-ui-color-primary-alpha-5: oklch(59.652% 0.21524 265.764 / 0.42);
+    --frame-ui-color-primary-alpha-6: oklch(61.685% 0.20263 267.744 / 0.486);
+    --frame-ui-color-primary-alpha-7: oklch(63.614% 0.19434 268.314 / 0.565);
+    --frame-ui-color-primary-alpha-8: oklch(63.984% 0.19034 267.984 / 0.675);
+    --frame-ui-color-primary-alpha-9: oklch(60.011% 0.21647 266.865 / 0.859);
+    --frame-ui-color-primary-alpha-10: oklch(63.456% 0.19365 269.088 / 0.89);
+    --frame-ui-color-primary-alpha-11: oklch(77.588% 0.1139 273.026);
+    --frame-ui-color-primary-alpha-12: oklch(91.079% 0.04286 269.563);
+
+    --frame-ui-color-success-solid-1: oklch(18.69% 0.01339 159.814);
+    --frame-ui-color-success-solid-2: oklch(20.965% 0.01328 150.005);
+    --frame-ui-color-success-solid-3: oklch(26.726% 0.0301 150.205);
+    --frame-ui-color-success-solid-4: oklch(31.856% 0.0527 150.334);
+    --frame-ui-color-success-solid-5: oklch(36.682% 0.06185 149.886);
+    --frame-ui-color-success-solid-6: oklch(41.637% 0.07242 149.361);
+    --frame-ui-color-success-solid-7: oklch(46.799% 0.08255 149.026);
+    --frame-ui-color-success-solid-8: oklch(52.291% 0.0973 148.347);
+    --frame-ui-color-success-solid-9: oklch(65.124% 0.14677 147.416);
+    --frame-ui-color-success-solid-10: oklch(68.937% 0.14495 147.827);
+    --frame-ui-color-success-solid-11: oklch(77.966% 0.14186 148.515);
+    --frame-ui-color-success-solid-12: oklch(91.086% 0.07801 144.962);
+
+    --frame-ui-color-success-alpha-1: oklch(78.063% 0.26296 142.814 / 0.02);
+    --frame-ui-color-success-alpha-2: oklch(86.681% 0.21339 146.562 / 0.039);
+    --frame-ui-color-success-alpha-3: oklch(89.244% 0.19756 147.78 / 0.106);
+    --frame-ui-color-success-alpha-4: oklch(88.578% 0.21906 148.034 / 0.173);
+    --frame-ui-color-success-alpha-5: oklch(89.214% 0.20315 148.402 / 0.231);
+    --frame-ui-color-success-alpha-6: oklch(89.566% 0.19575 148.182 / 0.294);
+    --frame-ui-color-success-alpha-7: oklch(89.343% 0.18766 148.168 / 0.365);
+    --frame-ui-color-success-alpha-8: oklch(89.311% 0.18947 147.76 / 0.439);
+    --frame-ui-color-success-alpha-9: oklch(88.989% 0.21218 147.138 / 0.631);
+    --frame-ui-color-success-alpha-10: oklch(89.569% 0.19709 147.683 / 0.682);
+    --frame-ui-color-success-alpha-11: oklch(90.741% 0.16947 148.332 / 0.804);
+    --frame-ui-color-success-alpha-12: oklch(95.34% 0.08214 144.958 / 0.937);
+
+    --frame-ui-color-warning-solid-1: oklch(18.208% 0.0139 94.041);
+    --frame-ui-color-warning-solid-2: oklch(20.947% 0.01734 91.821);
+    --frame-ui-color-warning-solid-3: oklch(26.094% 0.04713 90.266);
+    --frame-ui-color-warning-solid-4: oklch(29.29% 0.06001 93.805);
+    --frame-ui-color-warning-solid-5: oklch(33.464% 0.06845 92.467);
+    --frame-ui-color-warning-solid-6: oklch(38.49% 0.07759 92.913);
+    --frame-ui-color-warning-solid-7: oklch(45.205% 0.08085 91.978);
+    --frame-ui-color-warning-solid-8: oklch(53.491% 0.09462 89.389);
+    --frame-ui-color-warning-solid-9: oklch(91.758% 0.1837 100.947);
+    --frame-ui-color-warning-solid-10: oklch(97.11% 0.18185 109.373);
+    --frame-ui-color-warning-solid-11: oklch(90.011% 0.1663 101.727);
+    --frame-ui-color-warning-solid-12: oklch(94.155% 0.07475 101.127);
+
+    --frame-ui-color-warning-alpha-1: #d1510004;
+    --frame-ui-color-warning-alpha-2: #f9b4000b;
+    --frame-ui-color-warning-alpha-3: #ffaa001e;
+    --frame-ui-color-warning-alpha-4: #fdb70028;
+    --frame-ui-color-warning-alpha-5: #febb0036;
+    --frame-ui-color-warning-alpha-6: #fec40046;
+    --frame-ui-color-warning-alpha-7: #fdcb225c;
+    --frame-ui-color-warning-alpha-8: #fdca327b;
+    --frame-ui-color-warning-alpha-9: #ffe629;
+    --frame-ui-color-warning-alpha-10: #ffff57;
+    --frame-ui-color-warning-alpha-11: #fee949f5;
+    --frame-ui-color-warning-alpha-12: #fef6baf6;
+
+    --frame-ui-color-danger-solid-1: oklch(18.803% 0.01345 18.334);
+    --frame-ui-color-danger-solid-2: oklch(20.457% 0.02167 14.004);
+    --frame-ui-color-danger-solid-3: oklch(25.104% 0.06494 12.668);
+    --frame-ui-color-danger-solid-4: oklch(28.928% 0.09511 14.311);
+    --frame-ui-color-danger-solid-5: oklch(33.21% 0.10667 15.507);
+    --frame-ui-color-danger-solid-6: oklch(38.143% 0.11082 16.782);
+    --frame-ui-color-danger-solid-7: oklch(45.017% 0.12106 18.752);
+    --frame-ui-color-danger-solid-8: oklch(54.355% 0.14575 21.741);
+    --frame-ui-color-danger-solid-9: oklch(62.554% 0.19334 23.008);
+    --frame-ui-color-danger-solid-10: oklch(66.337% 0.17738 22.83);
+    --frame-ui-color-danger-solid-11: oklch(78.04% 0.1281 22.104);
+    --frame-ui-color-danger-solid-12: oklch(90.236% 0.05267 6.343);
+
+    --frame-ui-color-danger-alpha-1: oklch(61.15% 0.24494 28.693 / 0.035);
+    --frame-ui-color-danger-alpha-2: oklch(62.464% 0.22694 23.574 / 0.067);
+    --frame-ui-color-danger-alpha-3: oklch(63.679% 0.24919 21.904 / 0.176);
+    --frame-ui-color-danger-alpha-4: oklch(63.138% 0.25184 22.2 / 0.267);
+    --frame-ui-color-danger-alpha-5: oklch(64.109% 0.24542 20.545 / 0.337);
+    --frame-ui-color-danger-alpha-6: oklch(66.123% 0.22644 19.716 / 0.408);
+    --frame-ui-color-danger-alpha-7: oklch(68.209% 0.20722 20.053 / 0.518);
+    --frame-ui-color-danger-alpha-8: oklch(69.29% 0.19714 22.441 / 0.69);
+    --frame-ui-color-danger-alpha-9: oklch(67.331% 0.21195 23.13 / 0.894);
+    --frame-ui-color-danger-alpha-10: oklch(70.181% 0.18942 22.942 / 0.922);
+    --frame-ui-color-danger-alpha-11: oklch(78.04% 0.1281 22.104);
+    --frame-ui-color-danger-alpha-12: oklch(90.236% 0.05267 6.343);
+
+    /* prettier-ignore */
+    --frame-ui-shadow-1:
+			inset 0 -1px 1px 0 var(--frame-ui-color-default-alpha-3),
+			inset 0 0 0 1px var(--frame-ui-color-default-alpha-3),
+			inset 0 3px 4px 0 var(--frame-ui-color-black-alpha-5),
+			inset 0 0 0 1px var(--frame-ui-color-default-alpha-4);
+
+    /* prettier-ignore */
+    --frame-ui-shadow-2:
+			0 0 0 1px var(--frame-ui-color-default-alpha-6),
+			0 0 0 0.5px var(--frame-ui-color-black-alpha-3),
+			0 1px 1px 0 var(--frame-ui-color-black-alpha-6),
+			0 2px 1px -1px var(--frame-ui-color-black-alpha-6),
+			0 1px 3px 0 var(--frame-ui-color-black-alpha-5);
+
+    /* prettier-ignore */
+    --frame-ui-shadow-3:
+			0 0 0 1px var(--frame-ui-color-default-alpha-6),
+			0 2px 3px -2px var(--frame-ui-color-black-alpha-3),
+			0 3px 8px -2px var(--frame-ui-color-black-alpha-6),
+			0 4px 12px -4px var(--frame-ui-color-black-alpha-7);
+
+    /* prettier-ignore */
+    --frame-ui-shadow-4:
+			0 0 0 1px var(--frame-ui-color-default-alpha-6),
+			0 8px 40px var(--frame-ui-color-black-alpha-3),
+			0 12px 32px -16px var(--frame-ui-color-black-alpha-5);
+
+    /* prettier-ignore */
+    --frame-ui-shadow-5:
+			0 0 0 1px var(--frame-ui-color-default-alpha-6),
+			0 12px 60px var(--frame-ui-color-black-alpha-5),
+			0 12px 32px -16px var(--frame-ui-color-black-alpha-7);
+
+    /* prettier-ignore */
+    --frame-ui-shadow-6:
+			0 0 0 1px var(--frame-ui-color-default-alpha-6),
+			0 12px 60px var(--frame-ui-color-black-alpha-4),
+			0 16px 64px var(--frame-ui-color-black-alpha-6),
+			0 16px 36px -20px var(--frame-ui-color-black-alpha-11);
+  }
+
+  [data-radius] {
+    --frame-ui-radius-1: calc(0.1875rem * var(--frame-ui-scaling) * var(--frame-ui-radius-factor));
+    --frame-ui-radius-2: calc(0.25rem * var(--frame-ui-scaling) * var(--frame-ui-radius-factor));
+    --frame-ui-radius-3: calc(0.375rem * var(--frame-ui-scaling) * var(--frame-ui-radius-factor));
+    --frame-ui-radius-4: calc(0.5rem * var(--frame-ui-scaling) * var(--frame-ui-radius-factor));
+    --frame-ui-radius-5: calc(0.75rem * var(--frame-ui-scaling) * var(--frame-ui-radius-factor));
+    --frame-ui-radius-6: calc(1rem * var(--frame-ui-scaling) * var(--frame-ui-radius-factor));
+  }
+
+  [data-radius='none'] {
+    --frame-ui-radius-factor: 0;
+    --frame-ui-radius-full: 0px;
+    --frame-ui-radius-thumb: 0.5px;
+  }
+
+  [data-radius='small'] {
+    --frame-ui-radius-factor: 0.75;
+    --frame-ui-radius-full: 0px;
+    --frame-ui-radius-thumb: 0.5px;
+  }
+
+  [data-radius='medium'] {
+    --frame-ui-radius-factor: 1;
+    --frame-ui-radius-full: 0px;
+    --frame-ui-radius-thumb: calc(infinity * 1px);
+  }
+
+  [data-radius='large'] {
+    --radius-factor: 1.5;
+    --radius-full: 0px;
+    --radius-thumb: calc(infinity * 1px);
+  }
+
+  [data-radius='full'] {
+    --frame-ui-radius-factor: 1.5;
+    --frame-ui-radius-full: calc(infinity * 1px);
+    --frame-ui-radius-thumb: calc(infinity * 1px);
+  }
+
+  [data-scaling='90%'] {
+    --frame-ui-scaling: 0.9;
+  }
+
+  [data-scaling='95%'] {
+    --frame-ui-scaling: 0.95;
+  }
+
+  [data-scaling='100%'] {
+    --frame-ui-scaling: 1;
+  }
+
+  [data-scaling='105%'] {
+    --frame-ui-scaling: 1.05;
+  }
+
+  [data-scaling='110%'] {
+    --frame-ui-scaling: 1.1;
+  }
+
+  body {
+    color: var(--frame-ui-color-foreground);
+    background-color: var(--frame-ui-color-background);
+  }
+
+  body *::selection,
+  body::selection {
+    background-color: var(--frame-ui-color-primary-alpha-5);
+  }
+}
+
+@theme inline {
+  --spacing: calc(0.25rem * var(--frame-ui-scaling, 1));
+
+  --text-1: var(--frame-ui-font-size-1);
+  --text-1--line-height: var(--frame-ui-line-height-1);
+  --text-1--letter-spacing: var(--frame-ui-letter-spacing-1);
+
+  --text-2: var(--frame-ui-font-size-2);
+  --text-2--line-height: var(--frame-ui-line-height-2);
+  --text-2--letter-spacing: var(--frame-ui-letter-spacing-2);
+
+  --text-3: var(--frame-ui-font-size-3);
+  --text-3--line-height: var(--frame-ui-line-height-3);
+  --text-3--letter-spacing: var(--frame-ui-letter-spacing-3);
+
+  --text-4: var(--frame-ui-font-size-4);
+  --text-4--line-height: var(--frame-ui-line-height-4);
+  --text-4--letter-spacing: var(--frame-ui-letter-spacing-4);
+
+  --text-5: var(--frame-ui-font-size-5);
+  --text-5--line-height: var(--frame-ui-line-height-5);
+  --text-5--letter-spacing: var(--frame-ui-letter-spacing-5);
+
+  --text-6: var(--frame-ui-font-size-6);
+  --text-6--line-height: var(--frame-ui-line-height-6);
+  --text-6--letter-spacing: var(--frame-ui-letter-spacing-6);
+
+  --text-7: var(--frame-ui-font-size-7);
+  --text-7--line-height: var(--frame-ui-line-height-7);
+  --text-7--letter-spacing: var(--frame-ui-letter-spacing-7);
+
+  --text-8: var(--frame-ui-font-size-8);
+  --text-8--line-height: var(--frame-ui-line-height-8);
+  --text-8--letter-spacing: var(--frame-ui-letter-spacing-8);
+
+  --text-9: var(--frame-ui-font-size-9);
+  --text-9--line-height: var(--frame-ui-line-height-9);
+  --text-9--letter-spacing: var(--frame-ui-letter-spacing-9);
+
+  --leading-level-1: var(--frame-ui-line-height-1);
+  --leading-level-2: var(--frame-ui-line-height-2);
+  --leading-level-3: var(--frame-ui-line-height-3);
+  --leading-level-4: var(--frame-ui-line-height-4);
+  --leading-level-5: var(--frame-ui-line-height-5);
+  --leading-level-6: var(--frame-ui-line-height-6);
+  --leading-level-7: var(--frame-ui-line-height-7);
+  --leading-level-8: var(--frame-ui-line-height-8);
+  --leading-level-9: var(--frame-ui-line-height-9);
+
+  --tracking-1: var(--frame-ui-letter-spacing-1);
+  --tracking-2: var(--frame-ui-letter-spacing-2);
+  --tracking-3: var(--frame-ui-letter-spacing-3);
+  --tracking-4: var(--frame-ui-letter-spacing-4);
+  --tracking-5: var(--frame-ui-letter-spacing-5);
+  --tracking-6: var(--frame-ui-letter-spacing-6);
+  --tracking-7: var(--frame-ui-letter-spacing-7);
+  --tracking-8: var(--frame-ui-letter-spacing-8);
+  --tracking-9: var(--frame-ui-letter-spacing-9);
+
+  --radius-1: var(--frame-ui-radius-1);
+  --radius-2: var(--frame-ui-radius-2);
+  --radius-3: var(--frame-ui-radius-3);
+  --radius-4: var(--frame-ui-radius-4);
+  --radius-5: var(--frame-ui-radius-5);
+  --radius-6: var(--frame-ui-radius-6);
+
+  --color-background: var(--frame-ui-color-background);
+  --color-foreground: var(--frame-ui-color-foreground);
+  --color-overlay: var(--frame-ui-color-overlay);
+  --color-panel: var(--frame-ui-color-panel);
+
+  --color-default-contrast: var(--frame-ui-color-default-contrast);
+
+  --color-default-solid-1: var(--frame-ui-color-default-solid-1);
+  --color-default-solid-2: var(--frame-ui-color-default-solid-2);
+  --color-default-solid-3: var(--frame-ui-color-default-solid-3);
+  --color-default-solid-4: var(--frame-ui-color-default-solid-4);
+  --color-default-solid-5: var(--frame-ui-color-default-solid-5);
+  --color-default-solid-6: var(--frame-ui-color-default-solid-6);
+  --color-default-solid-7: var(--frame-ui-color-default-solid-7);
+  --color-default-solid-8: var(--frame-ui-color-default-solid-8);
+  --color-default-solid-9: var(--frame-ui-color-default-solid-9);
+  --color-default-solid-10: var(--frame-ui-color-default-solid-10);
+  --color-default-solid-11: var(--frame-ui-color-default-solid-11);
+  --color-default-solid-12: var(--frame-ui-color-default-solid-12);
+
+  --color-default-alpha-1: var(--frame-ui-color-default-alpha-1);
+  --color-default-alpha-2: var(--frame-ui-color-default-alpha-2);
+  --color-default-alpha-3: var(--frame-ui-color-default-alpha-3);
+  --color-default-alpha-4: var(--frame-ui-color-default-alpha-4);
+  --color-default-alpha-5: var(--frame-ui-color-default-alpha-5);
+  --color-default-alpha-6: var(--frame-ui-color-default-alpha-6);
+  --color-default-alpha-7: var(--frame-ui-color-default-alpha-7);
+  --color-default-alpha-8: var(--frame-ui-color-default-alpha-8);
+  --color-default-alpha-9: var(--frame-ui-color-default-alpha-9);
+  --color-default-alpha-10: var(--frame-ui-color-default-alpha-10);
+  --color-default-alpha-11: var(--frame-ui-color-default-alpha-11);
+  --color-default-alpha-12: var(--frame-ui-color-default-alpha-12);
+
+  --color-primary-contrast: var(--frame-ui-color-primary-contrast);
+
+  --color-primary-solid-1: var(--frame-ui-color-primary-solid-1);
+  --color-primary-solid-2: var(--frame-ui-color-primary-solid-2);
+  --color-primary-solid-3: var(--frame-ui-color-primary-solid-3);
+  --color-primary-solid-4: var(--frame-ui-color-primary-solid-4);
+  --color-primary-solid-5: var(--frame-ui-color-primary-solid-5);
+  --color-primary-solid-6: var(--frame-ui-color-primary-solid-6);
+  --color-primary-solid-7: var(--frame-ui-color-primary-solid-7);
+  --color-primary-solid-8: var(--frame-ui-color-primary-solid-8);
+  --color-primary-solid-9: var(--frame-ui-color-primary-solid-9);
+  --color-primary-solid-10: var(--frame-ui-color-primary-solid-10);
+  --color-primary-solid-11: var(--frame-ui-color-primary-solid-11);
+  --color-primary-solid-12: var(--frame-ui-color-primary-solid-12);
+
+  --color-primary-alpha-1: var(--frame-ui-color-primary-alpha-1);
+  --color-primary-alpha-2: var(--frame-ui-color-primary-alpha-2);
+  --color-primary-alpha-3: var(--frame-ui-color-primary-alpha-3);
+  --color-primary-alpha-4: var(--frame-ui-color-primary-alpha-4);
+  --color-primary-alpha-5: var(--frame-ui-color-primary-alpha-5);
+  --color-primary-alpha-6: var(--frame-ui-color-primary-alpha-6);
+  --color-primary-alpha-7: var(--frame-ui-color-primary-alpha-7);
+  --color-primary-alpha-8: var(--frame-ui-color-primary-alpha-8);
+  --color-primary-alpha-9: var(--frame-ui-color-primary-alpha-9);
+  --color-primary-alpha-10: var(--frame-ui-color-primary-alpha-10);
+  --color-primary-alpha-11: var(--frame-ui-color-primary-alpha-11);
+  --color-primary-alpha-12: var(--frame-ui-color-primary-alpha-12);
+
+  --color-success-contrast: var(--frame-ui-color-success-contrast);
+
+  --color-success-solid-1: var(--frame-ui-color-success-solid-1);
+  --color-success-solid-2: var(--frame-ui-color-success-solid-2);
+  --color-success-solid-3: var(--frame-ui-color-success-solid-3);
+  --color-success-solid-4: var(--frame-ui-color-success-solid-4);
+  --color-success-solid-5: var(--frame-ui-color-success-solid-5);
+  --color-success-solid-6: var(--frame-ui-color-success-solid-6);
+  --color-success-solid-7: var(--frame-ui-color-success-solid-7);
+  --color-success-solid-8: var(--frame-ui-color-success-solid-8);
+  --color-success-solid-9: var(--frame-ui-color-success-solid-9);
+  --color-success-solid-10: var(--frame-ui-color-success-solid-10);
+  --color-success-solid-11: var(--frame-ui-color-success-solid-11);
+  --color-success-solid-12: var(--frame-ui-color-success-solid-12);
+
+  --color-success-alpha-1: var(--frame-ui-color-success-alpha-1);
+  --color-success-alpha-2: var(--frame-ui-color-success-alpha-2);
+  --color-success-alpha-3: var(--frame-ui-color-success-alpha-3);
+  --color-success-alpha-4: var(--frame-ui-color-success-alpha-4);
+  --color-success-alpha-5: var(--frame-ui-color-success-alpha-5);
+  --color-success-alpha-6: var(--frame-ui-color-success-alpha-6);
+  --color-success-alpha-7: var(--frame-ui-color-success-alpha-7);
+  --color-success-alpha-8: var(--frame-ui-color-success-alpha-8);
+  --color-success-alpha-9: var(--frame-ui-color-success-alpha-9);
+  --color-success-alpha-10: var(--frame-ui-color-success-alpha-10);
+  --color-success-alpha-11: var(--frame-ui-color-success-alpha-11);
+  --color-success-alpha-12: var(--frame-ui-color-success-alpha-12);
+
+  --color-warning-contrast: var(--frame-ui-color-warning-contrast);
+
+  --color-warning-solid-1: var(--frame-ui-color-warning-solid-1);
+  --color-warning-solid-2: var(--frame-ui-color-warning-solid-2);
+  --color-warning-solid-3: var(--frame-ui-color-warning-solid-3);
+  --color-warning-solid-4: var(--frame-ui-color-warning-solid-4);
+  --color-warning-solid-5: var(--frame-ui-color-warning-solid-5);
+  --color-warning-solid-6: var(--frame-ui-color-warning-solid-6);
+  --color-warning-solid-7: var(--frame-ui-color-warning-solid-7);
+  --color-warning-solid-8: var(--frame-ui-color-warning-solid-8);
+  --color-warning-solid-9: var(--frame-ui-color-warning-solid-9);
+  --color-warning-solid-10: var(--frame-ui-color-warning-solid-10);
+  --color-warning-solid-11: var(--frame-ui-color-warning-solid-11);
+  --color-warning-solid-12: var(--frame-ui-color-warning-solid-12);
+
+  --color-warning-alpha-1: var(--frame-ui-color-warning-alpha-1);
+  --color-warning-alpha-2: var(--frame-ui-color-warning-alpha-2);
+  --color-warning-alpha-3: var(--frame-ui-color-warning-alpha-3);
+  --color-warning-alpha-4: var(--frame-ui-color-warning-alpha-4);
+  --color-warning-alpha-5: var(--frame-ui-color-warning-alpha-5);
+  --color-warning-alpha-6: var(--frame-ui-color-warning-alpha-6);
+  --color-warning-alpha-7: var(--frame-ui-color-warning-alpha-7);
+  --color-warning-alpha-8: var(--frame-ui-color-warning-alpha-8);
+  --color-warning-alpha-9: var(--frame-ui-color-warning-alpha-9);
+  --color-warning-alpha-10: var(--frame-ui-color-warning-alpha-10);
+  --color-warning-alpha-11: var(--frame-ui-color-warning-alpha-11);
+  --color-warning-alpha-12: var(--frame-ui-color-warning-alpha-12);
+
+  --color-danger-contrast: var(--frame-ui-color-danger-contrast);
+
+  --color-danger-solid-1: var(--frame-ui-color-danger-solid-1);
+  --color-danger-solid-2: var(--frame-ui-color-danger-solid-2);
+  --color-danger-solid-3: var(--frame-ui-color-danger-solid-3);
+  --color-danger-solid-4: var(--frame-ui-color-danger-solid-4);
+  --color-danger-solid-5: var(--frame-ui-color-danger-solid-5);
+  --color-danger-solid-6: var(--frame-ui-color-danger-solid-6);
+  --color-danger-solid-7: var(--frame-ui-color-danger-solid-7);
+  --color-danger-solid-8: var(--frame-ui-color-danger-solid-8);
+  --color-danger-solid-9: var(--frame-ui-color-danger-solid-9);
+  --color-danger-solid-10: var(--frame-ui-color-danger-solid-10);
+  --color-danger-solid-11: var(--frame-ui-color-danger-solid-11);
+  --color-danger-solid-12: var(--frame-ui-color-danger-solid-12);
+
+  --color-danger-alpha-1: var(--frame-ui-color-danger-alpha-1);
+  --color-danger-alpha-2: var(--frame-ui-color-danger-alpha-2);
+  --color-danger-alpha-3: var(--frame-ui-color-danger-alpha-3);
+  --color-danger-alpha-4: var(--frame-ui-color-danger-alpha-4);
+  --color-danger-alpha-5: var(--frame-ui-color-danger-alpha-5);
+  --color-danger-alpha-6: var(--frame-ui-color-danger-alpha-6);
+  --color-danger-alpha-7: var(--frame-ui-color-danger-alpha-7);
+  --color-danger-alpha-8: var(--frame-ui-color-danger-alpha-8);
+  --color-danger-alpha-9: var(--frame-ui-color-danger-alpha-9);
+  --color-danger-alpha-10: var(--frame-ui-color-danger-alpha-10);
+  --color-danger-alpha-11: var(--frame-ui-color-danger-alpha-11);
+  --color-danger-alpha-12: var(--frame-ui-color-danger-alpha-12);
+
+  --color-black-solid: var(--frame-ui-color-black-solid);
+
+  --color-black-alpha-1: var(--frame-ui-color-black-alpha-1);
+  --color-black-alpha-2: var(--frame-ui-color-black-alpha-2);
+  --color-black-alpha-3: var(--frame-ui-color-black-alpha-3);
+  --color-black-alpha-4: var(--frame-ui-color-black-alpha-4);
+  --color-black-alpha-5: var(--frame-ui-color-black-alpha-5);
+  --color-black-alpha-6: var(--frame-ui-color-black-alpha-6);
+  --color-black-alpha-7: var(--frame-ui-color-black-alpha-7);
+  --color-black-alpha-8: var(--frame-ui-color-black-alpha-8);
+  --color-black-alpha-9: var(--frame-ui-color-black-alpha-9);
+  --color-black-alpha-10: var(--frame-ui-color-black-alpha-10);
+  --color-black-alpha-11: var(--frame-ui-color-black-alpha-11);
+  --color-black-alpha-12: var(--frame-ui-color-black-alpha-12);
+
+  --color-white-solid: var(--frame-ui-color-white-solid);
+
+  --color-white-alpha-1: var(--frame-ui-color-white-alpha-1);
+  --color-white-alpha-2: var(--frame-ui-color-white-alpha-2);
+  --color-white-alpha-3: var(--frame-ui-color-white-alpha-3);
+  --color-white-alpha-4: var(--frame-ui-color-white-alpha-4);
+  --color-white-alpha-5: var(--frame-ui-color-white-alpha-5);
+  --color-white-alpha-6: var(--frame-ui-color-white-alpha-6);
+  --color-white-alpha-7: var(--frame-ui-color-white-alpha-7);
+  --color-white-alpha-8: var(--frame-ui-color-white-alpha-8);
+  --color-white-alpha-9: var(--frame-ui-color-white-alpha-9);
+  --color-white-alpha-10: var(--frame-ui-color-white-alpha-10);
+  --color-white-alpha-11: var(--frame-ui-color-white-alpha-11);
+  --color-white-alpha-12: var(--frame-ui-color-white-alpha-12);
+
+  --shadow-1: var(--frame-ui-shadow-1);
+  --shadow-2: var(--frame-ui-shadow-2);
+  --shadow-3: var(--frame-ui-shadow-3);
+  --shadow-4: var(--frame-ui-shadow-4);
+  --shadow-5: var(--frame-ui-shadow-5);
+  --shadow-6: var(--frame-ui-shadow-6);
+
+  --ease-smooth: var(--frame-ui-ease-smooth);
+
+  --ease-in-quad: var(--frame-ui-ease-in-quad);
+  --ease-in-cubic: var(--frame-ui-ease-in-cubic);
+  --ease-in-quart: var(--frame-ui-ease-in-quart);
+  --ease-in-quint: var(--frame-ui-ease-in-quint);
+  --ease-in-expo: var(--frame-ui-ease-in-expo);
+  --ease-in-circ: var(--frame-ui-ease-in-circ);
+
+  --ease-out-quad: var(--frame-ui-ease-out-quad);
+  --ease-out-cubic: var(--frame-ui-ease-out-cubic);
+  --ease-out-quart: var(--frame-ui-ease-out-quart);
+  --ease-out-quint: var(--frame-ui-ease-out-quint);
+  --ease-out-expo: var(--frame-ui-ease-out-expo);
+  --ease-out-circ: var(--frame-ui-ease-out-circ);
+
+  --ease-in-out-quad: var(--frame-ui-ease-in-out-quad);
+  --ease-in-out-cubic: var(--frame-ui-ease-in-out-cubic);
+  --ease-in-out-quart: var(--frame-ui-ease-in-out-quart);
+  --ease-in-out-quint: var(--frame-ui-ease-in-out-quint);
+  --ease-in-out-expo: var(--frame-ui-ease-in-out-expo);
+  --ease-in-out-circ: var(--frame-ui-ease-in-out-circ);
+}

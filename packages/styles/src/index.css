@@ -1,5 +1,8 @@
 @layer base {
   :root {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
     --frame-ui-font-size-1: calc(0.75rem * var(--frame-ui-scaling));
     --frame-ui-font-size-2: calc(0.875rem * var(--frame-ui-scaling));
     --frame-ui-font-size-3: calc(1rem * var(--frame-ui-scaling));

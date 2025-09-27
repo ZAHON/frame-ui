@@ -790,7 +790,7 @@
   --ease-in-out-expo: var(--frame-ui-ease-in-out-expo);
   --ease-in-out-circ: var(--frame-ui-ease-in-out-circ);
 
-  --animate-spinner-leaf-fade: spinner-leaf-fade 800ms linear infinite;
+  --animate-spinner-leaf-fade: spinner-leaf-fade var(--frame-ui-spinner-animation-duration, 800ms) linear infinite;
 
   @keyframes spinner-leaf-fade {
     0% {

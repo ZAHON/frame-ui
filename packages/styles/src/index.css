@@ -98,6 +98,8 @@
     --frame-ui-color-overlay: var(--frame-ui-color-black-alpha-6);
     --frame-ui-color-panel: var(--frame-ui-color-white-solid);
 
+    --frame-ui-color-default-surface: oklch(100% 0 0 / 0.8);
+
     --frame-ui-color-default-solid-1: oklch(99.107% 0 0);
     --frame-ui-color-default-solid-2: oklch(98.212% 0 0);
     --frame-ui-color-default-solid-3: oklch(95.514% 0 0);
@@ -123,6 +125,8 @@
     --frame-ui-color-default-alpha-10: oklch(0% 0 0 / 0.486);
     --frame-ui-color-default-alpha-11: oklch(0% 0 0 / 0.608);
     --frame-ui-color-default-alpha-12: oklch(0% 0 0 / 0.875);
+
+    --frame-ui-color-primary-surface: oklch(97.886% 0.00997 267.409 / 0.8);
 
     --frame-ui-color-primary-solid-1: oklch(99.433% 0.00143 285.189);
     --frame-ui-color-primary-solid-2: oklch(98.231% 0.00837 271.335);
@@ -150,6 +154,8 @@
     --frame-ui-color-primary-alpha-11: oklch(39.041% 0.21869 263.845 / 0.773);
     --frame-ui-color-primary-alpha-12: oklch(20.828% 0.10358 262.879 / 0.878);
 
+    --frame-ui-color-success-surface: oklch(97.791% 0.01174 145.926 / 0.8);
+
     --frame-ui-color-success-solid-1: oklch(99.393% 0.00497 146.596);
     --frame-ui-color-success-solid-2: oklch(98.192% 0.01004 146.016);
     --frame-ui-color-success-solid-3: oklch(95.989% 0.02194 145.633);
@@ -176,6 +182,8 @@
     --frame-ui-color-success-alpha-11: oklch(44.017% 0.14052 144.517 / 0.835);
     --frame-ui-color-success-alpha-12: oklch(21.224% 0.06247 147.378 / 0.875);
 
+    --frame-ui-color-warning-surface: oklch(98.434% 0.0301 100.901 / 0.8);
+
     --frame-ui-color-warning-solid-1: oklch(99.295% 0.00515 106.833);
     --frame-ui-color-warning-solid-2: oklch(98.755% 0.02484 102.003);
     --frame-ui-color-warning-solid-3: oklch(97.353% 0.08368 104.22);
@@ -201,6 +209,8 @@
     --frame-ui-color-warning-alpha-10: oklch(89.669% 0.18499 97.454);
     --frame-ui-color-warning-alpha-11: oklch(56.911% 0.11911 76.808);
     --frame-ui-color-warning-alpha-12: oklch(25.379% 0.05202 84.704 / 0.878);
+
+    --frame-ui-color-danger-surface: oklch(97.792% 0.01072 16.77 / 0.8);
 
     --frame-ui-color-danger-solid-1: oklch(99.336% 0.00316 15.246);
     --frame-ui-color-danger-solid-2: oklch(98.232% 0.00855 16.584);
@@ -277,6 +287,8 @@
     --frame-ui-color-overlay: var(--frame-ui-color-black-alpha-8);
     --frame-ui-color-panel: var(--frame-ui-color-default-solid-2);
 
+    --frame-ui-color-default-surface: oklch(24.776% 0 0 / 0.502);
+
     --frame-ui-color-default-solid-1: oklch(17.764% 0 0);
     --frame-ui-color-default-solid-2: oklch(21.342% 0 0);
     --frame-ui-color-default-solid-3: oklch(25.197% 0 0);
@@ -302,6 +314,8 @@
     --frame-ui-color-default-alpha-10: oklch(100% 0 0 / 0.447);
     --frame-ui-color-default-alpha-11: oklch(100% 0 0 / 0.686);
     --frame-ui-color-default-alpha-12: oklch(100% 0 0 / 0.929);
+
+    --frame-ui-color-primary-surface: oklch(24.257% 0.05772 272.889 / 0.502);
 
     --frame-ui-color-primary-solid-1: oklch(19.087% 0.02459 276.53);
     --frame-ui-color-primary-solid-2: oklch(20.937% 0.03018 274.843);
@@ -329,6 +343,8 @@
     --frame-ui-color-primary-alpha-11: oklch(77.588% 0.1139 273.026);
     --frame-ui-color-primary-alpha-12: oklch(91.079% 0.04286 269.563);
 
+    --frame-ui-color-success-surface: oklch(24.358% 0.02073 150.71 / 0.502);
+
     --frame-ui-color-success-solid-1: oklch(18.69% 0.01339 159.814);
     --frame-ui-color-success-solid-2: oklch(20.965% 0.01328 150.005);
     --frame-ui-color-success-solid-3: oklch(26.726% 0.0301 150.205);
@@ -355,6 +371,8 @@
     --frame-ui-color-success-alpha-11: oklch(90.741% 0.16947 148.332 / 0.804);
     --frame-ui-color-success-alpha-12: oklch(95.34% 0.08214 144.958 / 0.937);
 
+    --frame-ui-color-warning-surface: oklch(23.997% 0.02216 91.804 / 0.502);
+
     --frame-ui-color-warning-solid-1: oklch(18.208% 0.0139 94.041);
     --frame-ui-color-warning-solid-2: oklch(20.947% 0.01734 91.821);
     --frame-ui-color-warning-solid-3: oklch(26.094% 0.04713 90.266);
@@ -380,6 +398,8 @@
     --frame-ui-color-warning-alpha-10: #ffff57;
     --frame-ui-color-warning-alpha-11: #fee949f5;
     --frame-ui-color-warning-alpha-12: #fef6baf6;
+
+    --frame-ui-color-danger-surface: oklch(23.428% 0.04232 15.958 / 0.502);
 
     --frame-ui-color-danger-solid-1: oklch(18.803% 0.01345 18.334);
     --frame-ui-color-danger-solid-2: oklch(20.457% 0.02167 14.004);
@@ -591,6 +611,7 @@
   --color-panel: var(--frame-ui-color-panel);
 
   --color-default-contrast: var(--frame-ui-color-default-contrast);
+  --color-default-surface: var(--frame-ui-color-default-surface);
 
   --color-default-solid-1: var(--frame-ui-color-default-solid-1);
   --color-default-solid-2: var(--frame-ui-color-default-solid-2);
@@ -619,6 +640,7 @@
   --color-default-alpha-12: var(--frame-ui-color-default-alpha-12);
 
   --color-primary-contrast: var(--frame-ui-color-primary-contrast);
+  --color-primary-surface: var(--frame-ui-color-primary-surface);
 
   --color-primary-solid-1: var(--frame-ui-color-primary-solid-1);
   --color-primary-solid-2: var(--frame-ui-color-primary-solid-2);
@@ -647,6 +669,7 @@
   --color-primary-alpha-12: var(--frame-ui-color-primary-alpha-12);
 
   --color-success-contrast: var(--frame-ui-color-success-contrast);
+  --color-success-surface: var(--frame-ui-color-success-surface);
 
   --color-success-solid-1: var(--frame-ui-color-success-solid-1);
   --color-success-solid-2: var(--frame-ui-color-success-solid-2);
@@ -675,6 +698,7 @@
   --color-success-alpha-12: var(--frame-ui-color-success-alpha-12);
 
   --color-warning-contrast: var(--frame-ui-color-warning-contrast);
+  --color-warning-surface: var(--frame-ui-color-warning-surface);
 
   --color-warning-solid-1: var(--frame-ui-color-warning-solid-1);
   --color-warning-solid-2: var(--frame-ui-color-warning-solid-2);
@@ -703,6 +727,7 @@
   --color-warning-alpha-12: var(--frame-ui-color-warning-alpha-12);
 
   --color-danger-contrast: var(--frame-ui-color-danger-contrast);
+  --color-danger-surface: var(--frame-ui-color-danger-surface);
 
   --color-danger-solid-1: var(--frame-ui-color-danger-solid-1);
   --color-danger-solid-2: var(--frame-ui-color-danger-solid-2);

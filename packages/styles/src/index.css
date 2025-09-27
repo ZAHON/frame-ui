@@ -541,6 +541,10 @@
   body::selection {
     background-color: var(--frame-ui-color-primary-alpha-5);
   }
+
+  svg {
+    pointer-events: none;
+  }
 }
 
 @theme inline {

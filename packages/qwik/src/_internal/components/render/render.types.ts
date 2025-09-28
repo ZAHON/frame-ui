@@ -1,6 +1,6 @@
 import type { JSXOutput, PropsOf } from '@builder.io/qwik';
 
-export type Tag = 'span';
+export type Tag = 'button' | 'span';
 
 export type RenderProps<T extends Tag, S extends Record<string, unknown> = {}> = {
   /**

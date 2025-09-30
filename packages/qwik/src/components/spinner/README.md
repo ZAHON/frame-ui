@@ -16,7 +16,7 @@ Import the component and piece the parts together.
 import { component$ } from '@builder.io/qwik';
 import { Spinner } from '@frame-ui/qwik';
 
-export const Demo = component$(() => {
+const Demo = component$(() => {
   return (
     <Spinner.Root>
       {([0, 1, 2, 3, 4, 5, 6, 7] as const).map((index) => (
@@ -70,9 +70,9 @@ Use the `size` prop to control the size of the spinner.
 import { component$ } from '@builder.io/qwik';
 import { Spinner } from '@frame-ui/qwik';
 
-export const Demo = component$(() => {
+const Demo = component$(() => {
   return (
-    <div class="flex items-center justify-center gap-x-3">
+    <div class="flex items-center gap-x-3">
       <Spinner.Root size="1">
         {([0, 1, 2, 3, 4, 5, 6, 7] as const).map((index) => (
           <Spinner.Leaf key={index} index={index} />
@@ -105,15 +105,13 @@ For example, by applying a `text-*` utility class to the `Spinner.Root`, you can
 import { component$ } from '@builder.io/qwik';
 import { Spinner } from '@frame-ui/qwik';
 
-export const Demo = component$(() => {
+const Demo = component$(() => {
   return (
-    <div class="flex items-center justify-center">
-      <Spinner.Root class="text-primary-solid-9 [--frame-ui-spinner-animation-duration:1000ms]">
-        {([0, 1, 2, 3, 4, 5, 6, 7] as const).map((index) => (
-          <Spinner.Leaf key={index} index={index} />
-        ))}
-      </Spinner.Root>
-    </div>
+    <Spinner.Root class="text-primary-solid-9 [--frame-ui-spinner-animation-duration:1000ms]">
+      {([0, 1, 2, 3, 4, 5, 6, 7] as const).map((index) => (
+        <Spinner.Leaf key={index} index={index} />
+      ))}
+    </Spinner.Root>
   );
 });
 ```
@@ -134,21 +132,42 @@ When using the `render$` prop, always spread the provided `props` object onto yo
 import { component$, Slot } from '@builder.io/qwik';
 import { Spinner } from '@frame-ui/qwik';
 
-export const Demo = component$(() => {
+const Demo = component$(() => {
   return (
-    <div class="flex items-center justify-center">
-      <Spinner.Root
-        render$={(props) => (
-          <div {...props}>
-            <Slot />
-          </div>
-        )}
-      >
-        {([0, 1, 2, 3, 4, 5, 6, 7] as const).map((index) => (
-          <Spinner.Leaf key={index} index={index} />
-        ))}
-      </Spinner.Root>
-    </div>
+    <Spinner.Root
+      render$={(props) => (
+        <div {...props}>
+          <Slot />
+        </div>
+      )}
+    >
+      {([0, 1, 2, 3, 4, 5, 6, 7] as const).map((index) => (
+        <Spinner.Leaf key={index} index={index} />
+      ))}
+    </Spinner.Root>
+  );
+});
+```
+
+## Accessibility
+
+The `Spinner` component serves as a purely visual indicator of a loading state. By default, the `Spinner.Root` automatically includes the `aria-hidden="true"` attribute to ensure it is completely ignored by screen readers. This is the recommended practice when the loading status is conveyed by the content's parent element (e.g., using `aria-busy="true"`).
+
+In scenarios where the spinner is the primary or only indicator of a loading process on the page, you might need to override this default behavior to make the state accessible. To achieve this, you must pass `aria-hidden={undefined}` and `role="status"` to the `Spinner.Root` component. You also need to provide an accessible name using a component like `VisuallyHidden`. This technique ensures the screen reader announces the loading state once, while still suppressing announcements of the individual animated leaf elements.
+
+```tsx
+import { component$ } from '@builder.io/qwik';
+import { Spinner, VisuallyHidden } from '@frame-ui/qwik';
+
+const Demo = component$(() => {
+  return (
+    <Spinner.Root role="status" aria-hidden={undefined}>
+      {([0, 1, 2, 3, 4, 5, 6, 7] as const).map((index) => (
+        <Spinner.Leaf key={index} index={index} />
+      ))}
+
+      <VisuallyHidden.Root>Loading...</VisuallyHidden.Root>
+    </Spinner.Root>
   );
 });
 ```

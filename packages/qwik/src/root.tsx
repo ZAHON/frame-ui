@@ -1,3 +1,4 @@
+import { Theme } from '@/components';
 import { Test } from '@/test';
 import '@/index.css';
 
@@ -10,7 +11,9 @@ export default () => {
         <title>Frame UI Qwik</title>
       </head>
       <body>
-        <Test />
+        <Theme.Root>
+          <Test />
+        </Theme.Root>
       </body>
     </>
   );

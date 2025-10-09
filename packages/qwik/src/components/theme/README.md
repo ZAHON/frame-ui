@@ -2,6 +2,7 @@
 
 Wraps all or part of a Qwik tree to provide theme configuration.
 
+> [!NOTE]
 > This component uses the [`useVisibleTask$()`](https://qwik.dev/docs/components/tasks/#usevisibletask) hook to read initial values from `localStorage` and set up listeners for system color scheme changes. By default, this task is executed when the browser is idle (`"document-idle"`), which is the recommended strategy for best performance. You can use the `strategy` prop on [`Theme.Root`](#themeroot) to change when this task runs, for example, to run it eagerly (`"document-ready"`) or when the component enters the viewport (`"intersection-observer"`).
 
 ## Import

@@ -126,7 +126,8 @@ You can customize the underlying HTML element rendered by these subcomponents, o
 
 - Integrate with other components from your library or your custom Qwik components. This allows you to wrap the core spinner logic with custom styles or behaviors while ensuring the component's core logic and accessibility features remain intact.
 
-When using the `render$` prop, always spread the provided `props` object onto your custom element or component. This ensures that all essential attributes (like ARIA roles, IDs, and event handlers) are correctly applied, maintaining the component's intended behavior and accessibility.
+> [!IMPORTANT]
+> When using the `render$` prop, always spread the provided `props` object onto your custom element or component. This ensures that all essential attributes (like ARIA roles, IDs, and event handlers) are correctly applied, maintaining the component's intended behavior and accessibility.
 
 ```tsx
 import { component$, Slot } from '@builder.io/qwik';

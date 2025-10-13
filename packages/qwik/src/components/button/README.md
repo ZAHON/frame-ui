@@ -13,7 +13,7 @@ import { Button, useButtonContext } from '@frame-ui/qwik';
 Import the component and piece the parts together.
 
 > [!NOTE]
-> The sub-components ([`Button.Content`](#buttoncontent) and [`Button.Fallback`](#buttonfallback)) are optional unless you utilize the `loading` prop. If the `loading` prop is not used, you can place the button's content directly inside the `Button.Root` component.
+> The sub-components ([`Button.Content`](#buttoncontent) and [`Button.Fallback`](#buttonfallback)) are **optional** unless you utilize the `loading` prop. If the `loading` prop is **not used**, you can place the button's content directly inside the `Button.Root` component.
 
 ```tsx
 import { component$ } from '@builder.io/qwik';
@@ -65,7 +65,7 @@ Contains all the parts of a button. Renders a `<button>` element.
 
 ### Button.Content
 
-Contains the content for the button. This component is optional when the button is not expected to have a loading state. It is required when the `loading` prop is used on `Button.Root`, as its content will be automatically hidden while the button is loading. Renders a `<span>` element.
+Contains the content for the button. This component is **optional** when the button is not expected to have a loading state. It is **required** when the `loading` prop is used on `Button.Root`, as its content will be automatically hidden while the button is loading. Renders a `<span>` element.
 
 | Prop      | Type                                                                                                                            | Default | Description                                                                                                                                                                                                                                         |
 | :-------- | :------------------------------------------------------------------------------------------------------------------------------ | :------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -78,7 +78,7 @@ Contains the content for the button. This component is optional when the button 
 
 ### Button.Fallback
 
-The content displayed when the button is in the loading state. This component is only rendered when the `loading` prop on `Button.Root` is set to `true`. Use this to place a loading indicator (like a spinner) inside the button. Renders a `<span>` element.
+The content displayed when the button is in the loading state. This component is **optional** and is primarily used to display a **loading indicator** (like a spinner) inside the button. It is **only rendered** when the `loading` prop on `Button.Root` is set to `true`. Renders a `<span>` element.
 
 | Prop      | Type                                                                                                                            | Default | Description                                                                                                                                                                                                                                         |
 | :-------- | :------------------------------------------------------------------------------------------------------------------------------ | :------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -357,7 +357,7 @@ Use the `loading` prop to put the button into a pending state. When active, this
 When the button is loading, the content in `Button.Content` is hidden from screen readers. Therefore, you must include an accessible loading label inside `Button.Fallback` (e.g., using [`VisuallyHidden`](https://github.com/ZAHON/frame-ui/tree/main/packages/qwik/src/components/visually-hidden) as shown below) to inform users of the pending state.
 
 > [!IMPORTANT]
-> The sub-components ([`Button.Content`](#buttoncontent) and [`Button.Fallback`](#buttonfallback)) are required when you utilize the `loading` prop.
+> The sub-components ([`Button.Content`](#buttoncontent) and [`Button.Fallback`](#buttonfallback)) are **required** when you utilize the `loading` prop.
 
 ```tsx
 import { component$ } from '@builder.io/qwik';

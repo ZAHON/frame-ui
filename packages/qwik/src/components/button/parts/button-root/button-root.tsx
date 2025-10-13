@@ -4,12 +4,16 @@ import { BaseButtonRoot } from '@/_internal/components/base-button/parts/base-bu
 
 /**
  * Contains all the parts of a button.
- * The sub-components (`Button.Content` and `Button.Fallback`) are optional
- * unless you utilize the `loading` prop. If the `loading` prop is not used, you can
- * place the button's content directly inside the `Button.Root` component.
+ *
+ * The sub-components (`Button.Content` and `Button.Fallback`) are **optional**
+ * unless you utilize the `loading` prop.
+ *
+ * If the `loading` prop is **not used**, you can
+ * place the button's content **directly inside** the `Button.Root` component.
+ *
  * Renders a `<button>` element.
  *
- * Structure required when using the `loading` prop:
+ * Structure **required** when using the `loading` prop:
  * @example
  * ```tsx
  * <Button.Root>
@@ -18,7 +22,7 @@ import { BaseButtonRoot } from '@/_internal/components/base-button/parts/base-bu
  * </Button.Root>
  * ```
  *
- * Simple structure when the `loading` prop is not used:
+ * Simple structure when the `loading` prop is **not used**:
  * @example
  * ```tsx
  * <Button.Root />

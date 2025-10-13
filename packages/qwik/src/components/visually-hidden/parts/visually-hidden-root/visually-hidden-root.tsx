@@ -6,6 +6,7 @@ import { visuallyHiddenRootStyles } from './visually-hidden-root.styles';
 
 /**
  * Anything you put inside this component will be hidden from the screen but will be announced by screen readers.
+ *
  * Renders a `<span>` element.
  *
  * @example

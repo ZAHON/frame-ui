@@ -16,7 +16,7 @@ export const SpinnerLeaf = component$<SpinnerLeafProps>((props) => {
     <Render
       as="span"
       aria-hidden="true"
-      data-frame-ui-spinner-leaf
+      data-frame-ui-spinner-leaf=""
       class={cn(spinnerLeafStyles({ index, className }))}
       defaultRender$={(props) => (
         <span {...props}>

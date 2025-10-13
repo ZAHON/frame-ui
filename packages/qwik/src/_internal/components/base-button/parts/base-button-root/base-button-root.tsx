@@ -7,12 +7,16 @@ import { BaseButtonContext } from '../../contexts';
 
 /**
  * Contains all the parts of a base button.
- * The sub-components (`BaseButton.Content` and `BaseButton.Fallback`) are optional
- * unless you utilize the `loading` prop. If the `loading` prop is not used, you can
- * place the base button's content directly inside the `BaseButton.Root` component.
+ *
+ * The sub-components (`BaseButton.Content` and `BaseButton.Fallback`) are **optional**
+ * unless you utilize the `loading` prop.
+ *
+ * If the `loading` prop is **not used**, you can
+ * place the base button's content **directly inside** the `BaseButton.Root` component.
+ *
  * Renders a `<button>` element.
  *
- * Structure required when using the `loading` prop:
+ * Structure **required** when using the `loading` prop:
  * @example
  * ```tsx
  * <BaseButton.Root>
@@ -21,7 +25,7 @@ import { BaseButtonContext } from '../../contexts';
  * </BaseButton.Root>
  * ```
  *
- * Simple structure when the `loading` prop is not used:
+ * Simple structure when the `loading` prop is **not used**:
  * @example
  * ```tsx
  * <BaseButton.Root />

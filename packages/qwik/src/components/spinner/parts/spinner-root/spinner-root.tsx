@@ -6,6 +6,7 @@ import { spinnerRootStyles } from './spinner-root.styles';
 
 /**
  * Contains all the parts of a spinner.
+ *
  * Renders a `<span>` element.
  *
  * @example

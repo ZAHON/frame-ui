@@ -1,7 +1,7 @@
 import type { BaseButtonRootProps } from './base-button-root.types';
 import { component$, useComputed$, useContextProvider, Slot } from '@builder.io/qwik';
 import { cn } from '@frame-ui/utilities';
-import { Render } from '@/_internal';
+import { Render } from '@/_internal/components/render';
 import { baseButtonRootStyles } from './base-button-root.styles';
 import { BaseButtonContext } from '../../contexts';
 

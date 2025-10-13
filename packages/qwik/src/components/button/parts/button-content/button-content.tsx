@@ -14,7 +14,7 @@ import { BaseButtonContent } from '@/_internal/components/base-button/parts/base
  */
 export const ButtonContent = component$<ButtonContentProps>((props) => {
   return (
-    <BaseButtonContent data-frame-ui-button-content {...props}>
+    <BaseButtonContent data-frame-ui-button-content="" {...props}>
       <Slot />
     </BaseButtonContent>
   );

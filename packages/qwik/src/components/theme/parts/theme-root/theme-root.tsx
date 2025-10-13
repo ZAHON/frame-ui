@@ -27,6 +27,7 @@ const SCALINGS = ['90%', '95%', '100%', '105%', '110%'] as const;
 
 /**
  * Contains all the configuration and context necessary for the theming system to work.
+ *
  * Doesn’t render its own HTML element.
  *
  * @example

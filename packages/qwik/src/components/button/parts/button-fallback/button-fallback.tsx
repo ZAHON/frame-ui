@@ -5,9 +5,11 @@ import { BaseButtonFallback } from '@/_internal/components/base-button/parts/bas
 /**
  * The content displayed when the button is in the loading state.
  *
- * This component is **optional** and is primarily used to display a **loading indicator** (like a spinner) inside the button.
+ * By default, this component is **only rendered** when the `loading` prop on `Button.Root`
+ * is set to `true`.
  *
- * It is **only rendered** when the `loading` prop on `Button.Root` is set to `true`.
+ * Use the `forceMount` prop to **always** render the fallback content
+ * even when the button is not loading.
  *
  * Renders a `<span>` element.
  */

@@ -2,6 +2,7 @@ import { cva } from '@frame-ui/utilities';
 
 export const baseButtonRootStyles = cva(
   [
+    'relative',
     'inline-flex',
     'justify-center',
     'items-center',
@@ -16,7 +17,6 @@ export const baseButtonRootStyles = cva(
 
     'disabled:cursor-not-allowed',
 
-    'data-[loading]:relative',
     'data-[loading]:cursor-progress',
     'data-[loading]:[--frame-ui-spinner-opacity:1]',
   ],

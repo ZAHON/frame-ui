@@ -1,5 +1,5 @@
 /**
- * Throws an error with a standardized "Frame UI:" prefix.
+ * Throws an error with a standardized `"Frame UI:"` prefix.
  *
  * This utility function simplifies error handling by automatically
  * prepending a consistent prefix to all error messages originating

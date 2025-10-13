@@ -6,6 +6,7 @@ import { Render } from '@/_internal';
 
 /**
  * A single animated leaf of the spinner component.
+ *
  * Renders a `<span>` element.
  */
 export const SpinnerLeaf = component$<SpinnerLeafProps>((props) => {

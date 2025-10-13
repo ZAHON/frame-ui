@@ -57,7 +57,7 @@ export const ButtonRoot = component$<ButtonRootProps>((props) => {
       radius={radius.value}
       disabled={disabled.value}
       loading={loading.value}
-      data-frame-ui-button-root
+      data-frame-ui-button-root=""
       {...props}
     >
       <Slot />

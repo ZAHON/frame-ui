@@ -20,7 +20,7 @@ export const VisuallyHiddenRoot = component$<VisuallyHiddenRootProps>((props) =>
   return (
     <Render
       as="span"
-      data-frame-ui-visually-hidden-root
+      data-frame-ui-visually-hidden-root=""
       class={cn(visuallyHiddenRootStyles({ className }))}
       defaultRender$={(props) => (
         <span {...props}>

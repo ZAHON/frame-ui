@@ -13,7 +13,7 @@ import { BaseButtonFallback } from '@/_internal/components/base-button/parts/bas
  */
 export const ButtonFallback = component$<ButtonFallbackProps>((props) => {
   return (
-    <BaseButtonFallback data-frame-ui-button-fallback {...props}>
+    <BaseButtonFallback data-frame-ui-button-fallback="" {...props}>
       <Slot />
     </BaseButtonFallback>
   );

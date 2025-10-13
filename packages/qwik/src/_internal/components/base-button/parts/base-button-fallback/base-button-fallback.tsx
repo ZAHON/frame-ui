@@ -7,19 +7,25 @@ import { useBaseButtonContext } from '../../contexts';
 
 /**
  * The content displayed when the base button is in the loading state.
- * This component is only rendered when the `loading` prop on `BaseButton.Root` is set to `true`.
- * Use this to place a loading indicator (like a spinner) inside the base button.
+ *
+ * By default, this component is **only rendered** when the `loading` prop on `BaseButton.Root`
+ * is set to `true`.
+ *
+ * Use the `forceMount` prop to **always** render the fallback content
+ * even when the base button is not loading.
+ *
  * Renders a `<span>` element.
  */
 export const BaseButtonFallback = component$<BaseButtonFallbackProps>((props) => {
-  const { class: className, ...others } = props;
+  const { forceMount, class: className, ...others } = props;
 
   const { shape, size, disabled, loading } = useBaseButtonContext();
 
   return (
-    loading.value && (
+    (forceMount || loading.value) && (
       <Render
         as="span"
+        aria-hidden={forceMount && !loading.value ? 'true' : undefined}
         data-disabled={disabled.value ? '' : undefined}
         data-loading={loading.value ? '' : undefined}
         class={cn(baseButtonFallbackStyles({ shape, size: size.value, className }))}

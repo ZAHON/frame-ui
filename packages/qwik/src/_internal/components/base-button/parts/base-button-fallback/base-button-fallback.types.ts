@@ -2,6 +2,12 @@ import type { PropsOf, ReadonlySignal, JSXOutput } from '@builder.io/qwik';
 
 export interface BaseButtonFallbackProps extends PropsOf<'span'> {
   /**
+   * When `true`, the component will be rendered even if the base button is not in the loading state.
+   * @default false
+   */
+  forceMount?: boolean;
+
+  /**
    * Allows you to replace the component’s HTML element with a different tag, or compose it with another component.
    * Read our [Composition](https://github.com/ZAHON/frame-ui/tree/main/packages/qwik/docs/guides/composition.md) guide for more details.
    * @default undefined

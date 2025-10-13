@@ -4,9 +4,12 @@ import { BaseButtonContent } from '@/_internal/components/base-button/parts/base
 
 /**
  * Contains the content for the button.
- * This component is optional when the button is not expected to have a loading state.
- * It is required when the `loading` prop is used on `Button.Root`,
+ *
+ * This component is **optional** when the button is not expected to have a loading state.
+ *
+ * It is **required** when the `loading` prop is used on `Button.Root`,
  * as its content will be automatically hidden while the button is loading.
+ *
  * Renders a `<span>` element.
  */
 export const ButtonContent = component$<ButtonContentProps>((props) => {

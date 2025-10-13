@@ -1,7 +1,7 @@
 import type { BaseButtonFallbackProps } from './base-button-fallback.types';
 import { component$, Slot } from '@builder.io/qwik';
 import { cn } from '@frame-ui/utilities';
-import { Render } from '@/_internal';
+import { Render } from '@/_internal/components/render';
 import { baseButtonFallbackStyles } from './base-button-fallback.styles';
 import { useBaseButtonContext } from '../../contexts';
 

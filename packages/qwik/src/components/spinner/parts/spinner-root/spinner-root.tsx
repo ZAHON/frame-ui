@@ -24,7 +24,7 @@ export const SpinnerRoot = component$<SpinnerRootProps>((props) => {
     <Render
       as="span"
       aria-hidden="true"
-      data-frame-ui-spinner-root
+      data-frame-ui-spinner-root=""
       class={cn(spinnerRootStyles({ size, className }))}
       defaultRender$={(props) => (
         <span {...props}>

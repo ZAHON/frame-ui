@@ -1,5 +1,5 @@
 import type { ButtonFallbackProps } from './button-fallback.types';
-import { component$, Slot } from '@builder.io/qwik';
+import { component$, useComputed$, Slot } from '@builder.io/qwik';
 import { BaseButtonFallback } from '@/_internal/components/base-button/parts/base-button-fallback';
 
 /**
@@ -12,8 +12,12 @@ import { BaseButtonFallback } from '@/_internal/components/base-button/parts/bas
  * Renders a `<span>` element.
  */
 export const ButtonFallback = component$<ButtonFallbackProps>((props) => {
+  const { forceMount: _forceMount, ...others } = props;
+
+  const forceMount = useComputed$(() => _forceMount);
+
   return (
-    <BaseButtonFallback data-frame-ui-button-fallback="" {...props}>
+    <BaseButtonFallback forceMount={forceMount.value} data-frame-ui-button-fallback="" {...others}>
       <Slot />
     </BaseButtonFallback>
   );

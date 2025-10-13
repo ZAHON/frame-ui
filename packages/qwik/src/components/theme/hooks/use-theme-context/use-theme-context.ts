@@ -2,9 +2,10 @@ import { useContext } from '@builder.io/qwik';
 import { ThemeContext } from '../../contexts';
 
 /**
- * A hook that provides access to the theme's internal state. It exposes readonly signals
- * for the current `theme`, `radius`, and `scaling` preferences, along with `QRL` functions
- * to programmatically update these values.
+ * A hook that provides access to the theme's internal state.
+ *
+ * It exposes readonly signals for the current `theme`, `radius`, and `scaling` preferences,
+ * along with `QRL` functions to programmatically update these values.
  */
 export const useThemeContext = () => {
   const { theme, resolvedTheme, radius, scaling, setTheme$, setRadius$, setScaling$ } = useContext(ThemeContext);

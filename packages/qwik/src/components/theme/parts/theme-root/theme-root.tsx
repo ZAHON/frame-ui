@@ -32,7 +32,9 @@ const SCALINGS = ['90%', '95%', '100%', '105%', '110%'] as const;
  *
  * @example
  * ```tsx
- * <Theme.Root />
+ * <Theme.Root>
+ * 	<Theme.Node />
+ * </Theme.Root>
  * ```
  */
 export const ThemeRoot = component$<ThemeRootProps>((props) => {

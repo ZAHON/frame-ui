@@ -501,9 +501,9 @@
   }
 
   [data-radius='large'] {
-    --radius-factor: 1.5;
-    --radius-full: 0px;
-    --radius-thumb: calc(infinity * 1px);
+    --frame-ui-radius-factor: 1.5;
+    --frame-ui-radius-full: 0px;
+    --frame-ui-radius-thumb: calc(infinity * 1px);
   }
 
   [data-radius='full'] {

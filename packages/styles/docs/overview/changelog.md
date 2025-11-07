@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.0 (08.11.2025)
+
+### 🐞 Bug Fixes
+
+- **Prefixes radius custom properties.** Updates variables within the `[data-radius="large"]` selector by adding the `frame-ui-` prefix to prevent naming collisions.
+
 ## 0.3.0 (28.09.2025)
 
 ### 🚀 Features

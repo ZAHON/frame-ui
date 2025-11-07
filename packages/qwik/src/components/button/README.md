@@ -13,7 +13,7 @@ import { Button, useButtonContext } from '@frame-ui/qwik';
 Import the component and piece the parts together.
 
 > [!NOTE]
-> The sub-components ([`Button.Content`](#buttoncontent) and [`Button.Fallback`](#buttonfallback)) are **optional** unless you utilize the `loading` prop. If the `loading` prop is **not used**, you can place the button's content directly inside the `Button.Root` component.
+> The sub-components ([`Button.Content`](#buttoncontent) and [`Button.Fallback`](#buttonfallback)) are **optional** unless you utilize the `loading` prop. If the `loading` prop is **not used**, you can place the button's content directly inside the [`Button.Root`](#buttonroot) component.
 
 ```tsx
 import { component$ } from '@builder.io/qwik';
@@ -558,7 +558,7 @@ const DownloadIcon = component$(() => {
 
 ### Passing Tailwind CSS classes
 
-All parts of the `Button` component support passing standard Tailwind CSS utility classes via the class prop.
+All parts of the `Button` component support passing standard Tailwind CSS utility classes via the `class` prop.
 
 For example, by applying utility classes to `Button.Root`, you can easily customize layout properties like width or margin:
 
@@ -620,7 +620,9 @@ The `Button` component is designed to be fully accessible and supports standard 
 
 ### Loading state
 
-When the `loading` prop is set to `true`, the visible content inside `Button.Content` is automatically hidden. To ensure users relying on screen readers are informed about the button's pending status, you must provide an accessible label inside `Button.Fallback`.
+When the `loading` prop is set to `true`, all content inside `Button.Content` is automatically hidden. This includes any visual elements and accessible labels (like those provided by [`VisuallyHidden`](https://github.com/ZAHON/frame-ui/tree/main/packages/qwik/src/components/visually-hidden) component).
+
+To ensure users relying on screen readers are informed about the button's pending status, you must provide an accessible label inside `Button.Fallback`.
 
 The example below shows the best practice for including a descriptive status (like "Saving...") within a [`VisuallyHidden`](https://github.com/ZAHON/frame-ui/tree/main/packages/qwik/src/components/visually-hidden) component. This makes the loading state clear and understandable without causing visual clutter.
 
@@ -630,7 +632,7 @@ import { Button, Spinner, VisuallyHidden } from '@frame-ui/qwik';
 
 const Demo = component$(() => {
   return (
-    <Button.Root loading={true} variant="solid">
+    <Button.Root loading={true}>
       <Button.Content>Save data</Button.Content>
 
       <Button.Fallback>
